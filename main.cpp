@@ -19,7 +19,7 @@ Gate gate = Gate();
 
 int main() {
   string okay;
-  int num_keys = 3;
+  int num_keys = 0;
   
   cout << "\n\nBefore you begin, make sure this line is fully across your screen to make sure \nthe art does not warp (press any key + enter). \n\n" ;
     cout << "_______________________________________________________________________________";
@@ -37,11 +37,12 @@ int main() {
   while (bool all_keys = true){ 
     gate.guard_dialogue(num_keys);
 
-    cout << "success";
-
     cout << ba.redraw_background();
     cout << ba.crossroad();
-  
+    cout <<" You leave the gate and wonder back off to the path. You encounter a fork in the road with a sign between reading: \n'left: mountain'\n'right: mountain'";
+    
+    
+    cout << "success";
     exit(0);
     return(0);
     }
