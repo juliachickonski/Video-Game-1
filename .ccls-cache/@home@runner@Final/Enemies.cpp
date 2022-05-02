@@ -3,10 +3,10 @@
 
 using std::string;
 
-class Enemies{
-  public:
-    string skeleton(){
-      const std::string skeleton_art = R"skele(           
+class Enemies {
+public:
+  string skeleton() {
+    const std::string skeleton_art = R"skele(           
 _____________________________________________________________________________
 |                                                                           |
 |                                                                           |
@@ -32,12 +32,12 @@ _____________________________________________________________________________
 |            `._;l _'--------_/        )-'/     :  |___.    _._./ ;         |
 |              | |                     )-'\      \  \  I   1   / /          |
 |___________________________________________________________________________|
-      )skele"; 
-  //artist: nabisv link: https://www.asciiart.eu/mythology/skeletons
-  return skeleton_art;
+      )skele";
+    // artist: nabisv link: https://www.asciiart.eu/mythology/skeletons
+    return skeleton_art;
   }
 
-  string boss(){
+  string boss() {
     const std::string boss_art = R"pig(
 ______________________________________________________________________________
 |                                  |\/\/\/\/|                                |
@@ -66,9 +66,9 @@ ______________________________________________________________________________
 |                      UUUUUUUUUUUUU           UUUUUUUUUUUUU                 |
 |____________________________________________________________________________|
     )pig";
-    //trident by: Hawkeye,  https://www.asciiart.eu/weapons/knives 
-    //boss inspired by https://www.deviantart.com/metalviolin/art/ASCII-Monster-293670943
+    // trident by: Hawkeye,  https://www.asciiart.eu/weapons/knives
+    // boss inspired by
+    // https://www.deviantart.com/metalviolin/art/ASCII-Monster-293670943
     return boss_art;
   }
-  
 };

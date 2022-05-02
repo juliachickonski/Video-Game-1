@@ -65,7 +65,7 @@ ______________________________________________________________________________
 |                                                                            |
 |____________________________________________________________________________|
   )g";
-//castle found at https://www.asciiart.eu/buildings-and-places/castles
+  // castle found at https://www.asciiart.eu/buildings-and-places/castles
 
   const string crossroad_scene = R"cross(
 _____________________________________________________________________________
@@ -95,10 +95,9 @@ _____________________________________________________________________________
 |                     {           }                                         |
 |___________________________________________________________________________|
   )cross";
-// tree found at https://ascii.co.uk/art/tree
+  // tree found at https://ascii.co.uk/art/tree
 
-
-const string cave_scene = R"cave(
+  const string cave_scene = R"cave(
 _____________________________________________________________________________
 |     {               }                                                     |
 |      \  _-     -_  /                                                      |
@@ -127,7 +126,7 @@ _____________________________________________________________________________
 |___________________________________________________________________________|
 )cave";
 
-const string mountain_scene = R"mountain(
+  const string mountain_scene = R"mountain(
 _____________________________________________________________________________
 |                                                                           |
 |                                                                           |
@@ -157,7 +156,6 @@ _____________________________________________________________________________
 )mountain";
 
 public:
-
   string redraw_background() {
     string newline = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     return newline;
@@ -167,10 +165,9 @@ public:
 
   string plains() { return this->plains_scene; }
 
-  string crossroad(){ return this->crossroad_scene; }
+  string crossroad() { return this->crossroad_scene; }
 
-  string cave(){ return this->cave_scene; }
+  string cave() { return this->cave_scene; }
 
-  string mountain(){ return this->mountain_scene;}
-  
+  string mountain() { return this->mountain_scene; }
 };

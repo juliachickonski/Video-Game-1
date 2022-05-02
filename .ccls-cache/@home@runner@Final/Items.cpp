@@ -4,9 +4,9 @@
 using std::cout;
 using std::string;
 
-class Items{
-  private:
-    const string key_art = R"key(
+class Items {
+private:
+  const string key_art = R"key(
 ______________________________________________________________________________
 |                                                                            |
 |                                                                            |
@@ -34,8 +34,9 @@ ______________________________________________________________________________
 |                                                                            |
 |____________________________________________________________________________|
     )key";
-//key found at: https://ascii.co.uk/art/key
-//Text created with: https://patorjk.com/software/taag/#p=display&f=Graffiti&t=%20
+  // key found at: https://ascii.co.uk/art/key
+  // Text created with:
+  // https://patorjk.com/software/taag/#p=display&f=Graffiti&t=%20
 
   const string sword_secret = R"sword(
 _____________________________________________________________________________
@@ -66,9 +67,10 @@ _____________________________________________________________________________
 |                                                                           |
 |___________________________________________________________________________|
   )sword";
-//sword found at: https://ascii.co.uk/art/key
-//Text created with: https://patorjk.com/software/taag/#p=display&f=Graffiti&t=%20
-  public:
-    string read_key() { return this->key_art; }
-    string read_sword() { return this->sword_secret; }
+  // sword found at: https://ascii.co.uk/art/key
+  // Text created with:
+  // https://patorjk.com/software/taag/#p=display&f=Graffiti&t=%20
+public:
+  string read_key() { return this->key_art; }
+  string read_sword() { return this->sword_secret; }
 };
