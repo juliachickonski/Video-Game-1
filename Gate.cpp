@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include "UserCharacter.h"
 
 using std::cin;
 using std::cout;
@@ -9,7 +10,7 @@ using std::string;
 class Gate {
 
 public:
-  Character user = Character();
+  //Character user = Character();
   // determines if user has the three keys needed to get through the gate
 
   void check_keys(int num_keys) {
@@ -22,7 +23,8 @@ public:
   }
 
   bool guard_game(string key_art) {
-    bool guard_key = user.get_guard_key();
+    cout << get_num_keys();
+    bool guard_key = get_guard_key();
     if (guard_key == false) {
       cout << "\n To win this game, you must correctly guess the suit of the "
               "card I draw. \nIs the card: Heart, Diamond, Spade, or Club? ";
@@ -44,9 +46,9 @@ public:
         cout << "You win! Here is your "
                 "reward.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
         cout << key_art;
-        user.set_num_keys();
-        user.set_guard_key();
-        guard_key = user.get_guard_key();
+        set_num_keys();
+        set_guard_key();
+        guard_key = get_guard_key();
       } else {
         cout << "You loose. The card was " + guard_card +
                     ". Play again if you want to win.";
@@ -78,7 +80,7 @@ public:
             << "Hello traveller, how may I help you?\n[] Talk \n[] Give_Keys\n";
         cin >> okay;
         if (okay == "talk" || okay == "Talk" || okay == "TALK") {
-          bool guard_key = user.get_guard_key(); // false if user hasnt recieved
+          bool guard_key = get_guard_key(); // false if user hasnt recieved
                                                  // key from guard
           if (guard_key == false) {
             cout << "\nGuard: I've been at it for years and I cannot find the "
@@ -99,7 +101,7 @@ public:
         } else if (okay == "give_keys" || okay == "Give_Keys" ||
                    okay == "Give_keys" || okay == "GIVE_KEYS") {
           check_keys(num_keys);
-          cout << user.get_num_keys();
+          cout << get_num_keys();
           cin >> okay;
         }
       } else if (okay == "leave" || okay == "Leave" || okay == "LEAVE") {

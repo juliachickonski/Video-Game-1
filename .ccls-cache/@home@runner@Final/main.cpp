@@ -2,13 +2,13 @@
 #include <iostream>
 #include <string>
 
+#include "UserCharacter.h"
 #include "Background.cpp"
 #include "Enemies.cpp"
 #include "Gate.cpp"
 #include "Items.cpp"
 #include "Mountain.cpp"
 #include "Plains.cpp"
-#include "UserCharacter.cpp"
 
 using std::cin;
 using std::cout;
@@ -21,7 +21,6 @@ Items item = Items();
 Gate gate = Gate();
 Mountain mountain = Mountain();
 Plain plain = Plain();
-Character user = Character();
 
 int main() {
   string okay;
@@ -72,7 +71,7 @@ int main() {
     case 2:
       cout << ba.redraw_background();
       cout << ba.plains();
-      plain.plain_interaction();
+      plain.plain_interaction(item.read_key());
       break;
       
     case 3:
