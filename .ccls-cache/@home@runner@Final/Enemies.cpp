@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include "Enemies.h"
+#include "UserCharacter.h"
 
 using std::string;
 
@@ -71,4 +73,10 @@ ______________________________________________________________________________
     // https://www.deviantart.com/metalviolin/art/ASCII-Monster-293670943
     return boss_art;
   }
+
+  int enemy_hit(){
+    
+  }
+
+
 };

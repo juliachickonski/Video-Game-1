@@ -15,4 +15,9 @@ bool get_plains_key();
 void set_skele_bone();
 bool get_skele_bone();
 
+void set_enter_castle();
+int get_enter_castle();
+
+int user_attack();
+
 #endif

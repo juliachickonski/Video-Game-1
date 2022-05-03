@@ -2,18 +2,18 @@
 #include <iostream>
 #include <string>
 
-#include "UserCharacter.h"
 #include "Background.cpp"
 #include "Enemies.cpp"
+#include "Enemies.h"
 #include "Gate.cpp"
 #include "Items.cpp"
 #include "Mountain.cpp"
 #include "Plains.cpp"
+#include "UserCharacter.h"
 
 using std::cin;
 using std::cout;
 using std::string;
-
 
 Enemies en = Enemies();
 Background ba = Background();
@@ -45,7 +45,7 @@ int main() {
   cout << ba.gate();
   gate.guard_dialogue(num_keys, item.read_key());
 
-  do {
+  if (all_keys == true) {
     cout << ba.redraw_background();
     cout << ba.crossroad();
 
@@ -73,40 +73,63 @@ int main() {
       cout << ba.plains();
       plain.plain_interaction(item.read_key());
       break;
-      
-    case 3:
+
+    case 3: {
       cout << ba.redraw_background();
       cout << ba.gate();
-      gate.guard_dialogue(num_keys, item.read_key());
+      bool go_castle = gate.guard_dialogue(num_keys, item.read_key());
+
+      if (go_castle == false) {
+        all_keys = false;
+      }
       break;
     }
-  } while (all_keys == true);
+    }
+    // the final scene
+    cout << ba.redraw_background();
+    cout << "You finally enter the large gate and approach the castle. Before "
+            "you even arrive, you are approached...";
+    cout << en.boss();
+    cout << "King Blade: Hello traveller. I see you have completed my "
+            "challenge. You are not the first, and most certainly not the last "
+            "to complete my challenge. In reward, I am offering you a seat on "
+            "my Royal Guard. Do you accept? \n[1] Yes \n[2] No";
+    int user_choice;
+    switch (user_choice) {
+    case 1:
+      cout << "Welcome to the guard. Ha"
+      break;
+    case 2:
+      break;
+    }
 
-  cout << "\n\nend of program";
-  exit(0);
-  return (0);
+    cout << "\n\nend of program";
 
-  cout << item.read_key();
-  cout << ba.redraw_background();
+    exit(0);
+    return (0);
 
-  cout << item.read_sword();
-  cout << ba.redraw_background();
+    cout << item.read_key();
+    cout << ba.redraw_background();
 
-  cout << en.skeleton();
-  cout << ba.redraw_background();
+    cout << item.read_sword();
+    cout << ba.redraw_background();
 
-  cout << en.boss();
-  cout << ba.redraw_background();
+    cout << skeleton();
+    cout << ba.redraw_background();
 
-  cout << ba.plains();
-  cout << ba.redraw_background();
+    cout << boss();
+    cout << ba.redraw_background();
 
-  cout << ba.crossroad();
-  cout << ba.redraw_background();
+    cout << ba.plains();
+    cout << ba.redraw_background();
 
-  cout << ba.cave();
-  cout << ba.redraw_background();
+    cout << ba.crossroad();
+    cout << ba.redraw_background();
 
-  cout << ba.mountain();
-  cout << ba.redraw_background();
+    cout << ba.cave();
+    cout << ba.redraw_background();
+
+    cout << ba.mountain();
+    cout << ba.redraw_background();
+  }
 }
