@@ -9,7 +9,7 @@ using std::cout;
 using std::string;
 
 // different items recieved in game
-int num_keys = 3;
+int num_keys = 0;
 bool hero_sword = false;
 bool mountain_key = false;
 bool guard_key = false;
@@ -37,6 +37,9 @@ bool get_plains_key() { return plains_key; }
 
 void set_skele_bone() { skeleton_bone = true; }
 bool get_skele_bone() { return skeleton_bone; }
+
+void set_mountain_key() { mountain_key = true; }
+bool get_mountain_key() { return mountain_key; }
 
 int user_attack() {
   int attack;

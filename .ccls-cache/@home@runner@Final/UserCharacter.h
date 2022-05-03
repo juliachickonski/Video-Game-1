@@ -15,6 +15,9 @@ bool get_plains_key();
 void set_skele_bone();
 bool get_skele_bone();
 
+void set_mountain_key();
+bool get_mountain_key();
+
 void set_enter_castle();
 int get_enter_castle();
 

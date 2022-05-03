@@ -19,6 +19,7 @@ public:
     if (num_keys < 3) {
       cout << "\nSorry you don't have all three keys. Return when you have "
               "found them all ";
+      cout << num_keys;
       return true;
     } else {
       cout << "\nCongrats! See King Blade to redeem your prize.";
@@ -81,7 +82,6 @@ public:
 
     if (okay == "y" || okay == "Y") {
       enter_castle = check_keys();
-      cout << get_num_keys();
       cin >> okay;
       if (enter_castle == false) {
         return enter_castle;
@@ -120,7 +120,6 @@ public:
           } else if (okay == "give_keys" || okay == "Give_Keys" ||
                      okay == "Give_keys" || okay == "GIVE_KEYS") {
             enter_castle = check_keys();
-            cout << get_num_keys();
             cin >> okay;
             if (enter_castle == false) {
               return enter_castle;

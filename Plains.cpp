@@ -15,24 +15,28 @@ public:
     if (got_key == false) { // sees if user has gotten the plains key already
       cout << "You journey across the wide plains of yonder and come across a "
               "wolf. You notice something shining from the neck of the beast. "
-              "Do you... \n[1] Grab\n[2] Leave";
+              "Do you... \n[1] Grab\n[2] Leave ";
       std::cin >> choice;
-      cout << get_num_keys();
       switch (choice) {
       case 1: {
         bool found_bone = get_skele_bone();
         if (found_bone == false){
-          cout << "You extend your hand out towards the wolf and it lunges "
+          cout << "\nYou extend your hand out towards the wolf and it lunges "
                   "aggressively at you. You decide its not worth the risk to "
                   "loose a hand and decide to come back later.Maybe you can "
-                  "find something to distract it.(  any key + enter) ";
+                  "find something to distract it. (any key + enter) ";
         std::cin >> cont;
+  
         return;
       }
         else {
           set_plains_key();
           got_key = get_plains_key();
-          cout << key_art;
+          set_num_keys();
+          cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+            "You toss the bone you retrieved to the wolf and he lets you remove the key from his neck. ";
+          cout << key_art + "\n(any key + enter)";
+          std::cin >> cont;
           return;
         }
       }

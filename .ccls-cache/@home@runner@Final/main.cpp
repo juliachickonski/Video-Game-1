@@ -45,7 +45,7 @@ int main() {
   cout << ba.gate();
   gate.guard_dialogue(num_keys, item.read_key());
 
-  if (all_keys == true) {
+  do {
     cout << ba.redraw_background();
     cout << ba.crossroad();
 
@@ -65,7 +65,7 @@ int main() {
 
       cout << ba.redraw_background();
       cout << ba.cave();
-      mountain.cave_enterance();
+      mountain.cave_enterance(item.read_key(), en.skeleton());
       break;
 
     case 2:
@@ -85,51 +85,32 @@ int main() {
       break;
     }
     }
-    // the final scene
-    cout << ba.redraw_background();
-    cout << "You finally enter the large gate and approach the castle. Before "
-            "you even arrive, you are approached...";
-    cout << en.boss();
-    cout << "King Blade: Hello traveller. I see you have completed my "
-            "challenge. You are not the first, and most certainly not the last "
-            "to complete my challenge. In reward, I am offering you a seat on "
-            "my Royal Guard. Do you accept? \n[1] Yes \n[2] No";
-    int user_choice;
-    switch (user_choice) {
-    case 1:
-      cout << "Welcome to the guard. Ha"
-      break;
-    case 2:
-      break;
-    }
+  } while (all_keys == true);
 
-    cout << "\n\nend of program";
-
-    exit(0);
-    return (0);
-
-    cout << item.read_key();
-    cout << ba.redraw_background();
-
-    cout << item.read_sword();
-    cout << ba.redraw_background();
-
-    cout << skeleton();
-    cout << ba.redraw_background();
-
-    cout << boss();
-    cout << ba.redraw_background();
-
-    cout << ba.plains();
-    cout << ba.redraw_background();
-
-    cout << ba.crossroad();
-    cout << ba.redraw_background();
-
-    cout << ba.cave();
-    cout << ba.redraw_background();
-
-    cout << ba.mountain();
-    cout << ba.redraw_background();
+  // the final scene
+  cout << ba.redraw_background();
+  cout << "You finally enter the large gate and approach the castle. Before "
+          "you even arrive, you are approached...";
+  cout << en.boss();
+  cout << "King Blade: Hello traveller. I see you have completed my "
+          "challenge. You are not the first, and most certainly not the last "
+          "to complete my challenge. In reward, I am offering you a seat on "
+          "my Royal Guard. Do you accept? \n[1] Yes \n[2] No";
+  int user_choice;
+  cin >> user_choice;
+  switch (user_choice) {
+  case 1:
+    cout << "Welcome to the guard! I will have the servants set a room for "
+            "you.";
+    break;
+  case 2:
+    cout << "I see, you'd much rather continue on your journey. Well thank "
+            "you for completing my quest";
+    break;
   }
+
+  cout << "\n\nend of program";
+
+  exit(0);
+  return (0);
 }
